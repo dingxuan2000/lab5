@@ -10,8 +10,33 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	// $('.friends').click(function(e){
+	// 	var rename = $(this).click(anagrammedName);
+	// 	console.log(rename);
+	// })
+	//var rename =
+	$('a.name').click(projectClick);
+	//console.log(rename);
+	//$(this).text(rename);
 }
 
+function projectClick(e){
+	e.preventDefault();
+	var curr = $(this).text();
+	//console.log(curr);
+	var rename = anagrammedName(curr);
+	//console.log(anagrammedName(curr));
+	$(this).text(rename);
+	$(this).html('<h3>'+rename+'</h3>'); //match to the original css styling
+	// $(this).css({
+	// 	'font-family':'"Helvetica Neue", Helvetica, Arial, sans-serif',
+	// 	'font-weight':'500',
+	// 	'line-height': '1.1',
+	// 	'color': 'inherit'
+	// });
+
+	//return rename;
+}
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
 	
